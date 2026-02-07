@@ -2,183 +2,182 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>الدرس الذهبي للوضعية الإدماجية - منصة نوفل</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منهجية وضعيات الإنجليزية - بكالوريا 2026</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
-        :root { --naufal-blue: #1a2a6c; --naufal-gold: #f1c40f; --naufal-green: #27ae60; --naufal-red: #e74c3c; }
-        body { font-family: 'Cairo', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; line-height: 1.8; }
-        .wrapper { max-width: 1100px; margin: auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 1px solid #ddd; }
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Roboto+Mono:wght@500&display=swap');
         
-        /* الهيدر */
-        .main-header { background: linear-gradient(to left, #1a2a6c, #b21f1f, #fdbb2d); color: white; padding: 50px 20px; text-align: center; }
-        .main-header h1 { font-size: 35px; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .main-header p { font-size: 18px; opacity: 0.9; }
+        :root {
+            --primary: #2980b9;
+            --accent: #e67e22;
+            --dark: #2c3e50;
+            --light-bg: #fdfefe;
+            --english-color: #27ae60;
+        }
 
-        .content { padding: 40px; }
-        h2 { color: var(--naufal-blue); border-bottom: 3px solid var(--naufal-gold); display: inline-block; padding-bottom: 5px; margin-top: 40px; }
-
-        /* نظام الملاحظات الذكية */
-        .smart-note { background: #fff9db; border-right: 8px solid var(--naufal-gold); padding: 20px; margin: 25px 0; border-radius: 10px; position: relative; }
-        .smart-note::before { content: "💡 ملاحظة ذكية:"; font-weight: bold; display: block; color: #856404; margin-bottom: 10px; }
-
-        /* القاموس الموسع */
-        .dictionary-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .dict-card { background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .dict-card h3 { background: var(--naufal-blue); color: white; margin: 0; padding: 15px; text-align: center; font-size: 1.2em; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; line-height: 1.8; }
+        header { background: var(--dark); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--accent); }
+        .container { max-width: 1000px; margin: 20px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         
-        .word-row { display: flex; justify-content: space-between; padding: 12px 15px; border-bottom: 1px solid #f1f1f1; transition: 0.2s; }
-        .word-row:hover { background: #f8f9fa; }
-        .word-en { font-family: 'Courier New', monospace; font-weight: bold; color: #2c3e50; font-size: 1.1em; }
-        .word-ar { color: #555; font-weight: 600; }
-        .word-pronounce { color: var(--naufal-red); font-size: 0.85em; background: #ffebeb; padding: 2px 6px; border-radius: 4px; }
+        h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        h3 { color: var(--accent); margin-top: 25px; }
 
-        /* الخطوات المنهجية */
-        .method-step { background: #fdfdfd; border: 1px solid #ececec; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-        .step-label { background: var(--naufal-blue); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.9em; margin-bottom: 15px; display: inline-block; }
+        .grading-box { background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .grading-table { width: 100%; border-collapse: collapse; text-align: center; }
+        .grading-table th { background: var(--primary); color: white; padding: 10px; }
+        .grading-table td { border: 1px solid #ddd; padding: 10px; }
 
-        /* القالب السحري */
-        .magic-template { background: #1a2a6c; color: #fff; padding: 30px; border-radius: 15px; font-family: 'Courier New', monospace; font-size: 1.2em; direction: ltr; text-align: left; line-height: 1.6; border: 4px double var(--naufal-gold); }
-        .magic-template b { color: var(--naufal-gold); text-decoration: underline; }
+        .english-template { 
+            direction: ltr; 
+            text-align: left; 
+            background: #2d3436; 
+            color: #ecf0f1; 
+            padding: 25px; 
+            border-radius: 8px; 
+            font-family: 'Roboto Mono', monospace; 
+            border-left: 10px solid var(--accent);
+            margin: 20px 0;
+            white-space: pre-wrap;
+        }
 
-        .footer { background: #f1f1f1; text-align: center; padding: 20px; font-size: 0.9em; color: #666; }
+        .instruction-tag { background: #eee; color: #333; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+        .connector-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .connector-item { background: #e8f6f3; border-right: 4px solid var(--english-color); padding: 10px; border-radius: 4px; }
+        
+        .methodology-list { padding-right: 20px; list-style-type: square; }
+        .btn-download { background: #c0392b; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-size: 1.2em; cursor: pointer; display: block; margin: 40px auto; width: 100%; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="main-header">
-        <h1>المرجع النهائي للوضعية الإدماجية (Unit 1)</h1>
-        <p>مستخلص من: السلسلة الفضية + كتاب النوابغ | إعداد منصة نوفل</p>
-    </div>
+<header>
+    <h1>الدليل المنهجي الموحد للوضعية الإدماجية</h1>
+    <p>وفق معايير التصحيح الوزاري ومراجع الأساتذة (ناصري، منصوري، وفرني)</p>
+</header>
 
-    <div class="content">
-        
-        <div class="smart-note">
-            يا بني، المصحح لا يبحث عن "شكسبير"، هو يبحث عن تلميذ منظم يعرف كلمات الوحدة ويحترم علامات الترقيم. حتى لو كنت "صفراً" في اللغة، هذا الدليل سيجعلك تكتب فقرة "نظيفة" تحصد بها النقاط.
+<div class="container" id="content">
+
+    <section>
+        <h2>1. معايير توزيع التنقيط (Marking Scheme)</h2>
+        <p>يتم تقييم الوضعية (05 أو 06 نقاط) بناءً على المعايير التالية:</p>
+        <table class="grading-table">
+            <tr>
+                <th>المعيار</th>
+                <th>الوصف</th>
+                <th>العلامة</th>
+            </tr>
+            <tr>
+                <td>Relevance</td>
+                <td>مدى الالتزام بالموضوع المطلوب والأفكار المعطاة</td>
+                <td>2.0 ن</td>
+            </tr>
+            <tr>
+                <td>Coherence</td>
+                <td>استخدام الروابط المنطقية، علامات الترقيم، وتنسيق الفقرات</td>
+                <td>1.5 ن</td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>سلامة القواعد (Grammar) وصحة الإملاء (Spelling)</td>
+                <td>2.0 ن</td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td>احترام شكل النوع المطلوب (رسالة، مقال، خطاب)</td>
+                <td>0.5 ن</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>2. روابط التسلسل المنطقي (Sequence Connectors)</h2>
+        <p>يجب توظيف هذه الروابط لضمان انسجام النص (Coherence):</p>
+        <div class="connector-list">
+            <div class="connector-item"><b>To start:</b> First, First of all, To begin with.</div>
+            <div class="connector-item"><b>To add:</b> Second, Moreover, Furthermore, In addition.</div>
+            <div class="connector-item"><b>To contrast:</b> However, Nevertheless, On the other hand.</div>
+            <div class="connector-item"><b>To conclude:</b> In conclusion, To sum up, Finally.</div>
         </div>
+    </section>
 
-        <h2>أولاً: منهجية "بناء الجملة" للمبتدئين</h2>
-        <div class="method-step">
-            <span class="step-label">القاعدة الذهبية</span>
-            <p>الجملة الإنجليزية تبدأ بـ <b>الفاعل (Subject)</b> ثم <b>الفعل (Verb)</b>. لا تبدأ بالفعل أبداً كما نفعل في العربية.</p>
-            <ul>
-                <li>❌ غلط: <span dir="ltr">Combat we corruption.</span></li>
-                <li>✅ صح: <span dir="ltr">We combat corruption.</span> (نحن نحارب الفساد)</li>
-            </ul>
+    <h2>3. المنهجية التطبيقية لكل نوع</h2>
+
+    <section>
+        <h3>أ. المقال (Article / Essay / Composition)</h3>
+        <ul class="methodology-list">
+            <li><strong>Introduction:</strong> ابدأ بفراغ (Indentation). قدم تعريفاً عاماً للموضوع + طرح الإشكالية.</li>
+            <li><strong>Body Paragraphs:</strong> فقرة لكل فكرة رئيسية. ابدأ كل فقرة برابط تسلسل.</li>
+            <li><strong>Conclusion:</strong> تلخيص للأفكار المقترحة أو إعطاء نصيحة نهائية.</li>
+        </ul>
+        <div class="english-template">
+(Indentation) Nowadays, <b>[Topic Name]</b> is considered one of the most serious issues in our society. It affects many aspects of our lives. In this essay, I will discuss some of its causes and effects.
+
+(Indentation) <b>First of all</b>, <b>[Idea 01]</b>... <b>Moreover</b>, <b>[Idea 02]</b>... <b>Consequently</b>, it leads to many negative results.
+
+(Indentation) <b>To sum up</b>, we must cooperate to solve this problem before it is too late.
         </div>
+    </section>
 
-        <h2>ثانياً: القاموس الشامل (مخزن الأسلحة اللغوية)</h2>
-        <p>هذا القاموس يحتوي على أهم ما ورد في "السلسلة الفضية" و "كتاب النوابغ" مع طريقة النطق:</p>
+    <section>
+        <h3>ب. الرسالة الرسمية (Formal Letter)</h3>
+        <ul class="methodology-list">
+            <li>احترام أماكن العناوين، التاريخ، والتحية الافتتاحية والختامية.</li>
+            <li>عدم استخدام الاختصارات (مثل Don't) واستبدالها بـ (Do not).</li>
+        </ul>
+        <div class="english-template">
+Sender's Address: (Ex: Algiers, Algeria)
+Date: February 07th, 2026
 
-        <div class="dictionary-section">
-            <div class="dict-card">
-                <h3>الأفعال - Action Verbs</h3>
-                <div class="word-row">
-                    <div><span class="word-en">To combat</span> <br> <span class="word-pronounce">تو كومبات</span></div>
-                    <span class="word-ar">يُحارب / يُكافح</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">To bribe</span> <br> <span class="word-pronounce">تو برايب</span></div>
-                    <span class="word-ar">يَرشي</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">To counterfeit</span> <br> <span class="word-pronounce">تو كونتر-فيت</span></div>
-                    <span class="word-ar">يُزوّر / يُقلّد</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">To embezzle</span> <br> <span class="word-pronounce">تو إمبيزل</span></div>
-                    <span class="word-ar">يختلس الأموال</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">To boycott</span> <br> <span class="word-pronounce">تو بوي-كوت</span></div>
-                    <span class="word-ar">يُقاطع</span>
-                </div>
-            </div>
+To: The Manager of [Company/Department]
+Subject: [The Subject of your letter]
 
-            <div class="dict-card">
-                <h3 style="background:#27ae60;">الأسماء - Essential Nouns</h3>
-                <div class="word-row">
-                    <div><span class="word-en">Corruption</span> <br> <span class="word-pronounce">كورابـشن</span></div>
-                    <span class="word-ar">الفساد</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Integrity</span> <br> <span class="word-pronounce">إنـتيـغـريـتي</span></div>
-                    <span class="word-ar">النزاهة</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Smuggling</span> <br> <span class="word-pronounce">سـمـاغـلينغ</span></div>
-                    <span class="word-ar">التهريب</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Child labor</span> <br> <span class="word-pronounce">تشايلد لايبر</span></div>
-                    <span class="word-ar">عمالة الأطفال</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Ethics</span> <br> <span class="word-pronounce">إيـثـيكس</span></div>
-                    <span class="word-ar">الأخلاقيات</span>
-                </div>
-            </div>
+Dear Sir/Madam,
 
-            <div class="dict-card">
-                <h3 style="background:#e67e22;">الصفات - Key Adjectives</h3>
-                <div class="word-row">
-                    <div><span class="word-en">Unethical</span> <br> <span class="word-pronounce">آن-إيثيكل</span></div>
-                    <span class="word-ar">غير أخلاقي</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Illegal</span> <br> <span class="word-pronounce">إيـليـغل</span></div>
-                    <span class="word-ar">غير قانوني</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Dishonest</span> <br> <span class="word-pronounce">ديس-أونست</span></div>
-                    <span class="word-ar">غير أمين / خائن</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Harmful</span> <br> <span class="word-pronounce">هارم-فول</span></div>
-                    <span class="word-ar">ضار / مؤذي</span>
-                </div>
-                <div class="word-row">
-                    <div><span class="word-en">Fraudulent</span> <br> <span class="word-pronounce">فرود-يولنت</span></div>
-                    <span class="word-ar">احتيالي</span>
-                </div>
-            </div>
+(Indentation) I am writing this letter to express my concern regarding <b>[Topic]</b>...
+(Body: Explain using the provided notes)
+
+(Indentation) I look forward to hearing from you soon.
+
+Yours faithfully,
+[Your Name]
         </div>
+    </section>
 
-        <div class="smart-note">
-            <b>ملاحظة من كتاب النوابغ:</b> لا تحاول حفظ الكلمات كقائمة صماء. جرب أن تضع "الصفة" قبل "الاسم". <br>
-            مثال: بدلاً من Corruption قل <b>Unethical Corruption</b> (فساد غير أخلاقي). هذه الحركة تجعل المصحح ينبهر بمستواك!
+    <section>
+        <h3>ج. الخطاب (Speech)</h3>
+        <ul class="methodology-list">
+            <li>التميز بوجود تحية حارة للجمهور في البداية وشكرهم في النهاية.</li>
+        </ul>
+        <div class="english-template">
+(Middle) <b>SPEECH</b>
+
+Ladies and Gentlemen, dear classmates, 
+
+(Indentation) It is a great honor for me to stand here today to talk about <b>[Topic]</b>. As you all know, this issue is very important for our future...
+
+(Body Paragraph)
+
+(Indentation) <b>Finally</b>, I hope you have found this speech useful. Thank you for your attention.
         </div>
+    </section>
 
-        <h2>ثالثاً: القالب العملي (The Magic Template)</h2>
-        <p>هذا القالب مصمم ليكون "مرناً"، يمكنك استخدامه مع أي موضوع في الوحدة الأولى:</p>
-        
-        <div class="magic-template">
-            Nowadays, <b>[Topic]</b> is a very serious and <b>unethical</b> problem that spreads in our society. It is <b>illegal</b> and it has <b>harmful</b> effects on our <b>economy</b>. 
-            <br><br>
-            First of all, many <b>dishonest</b> people participate in this crime. Moreover, we must <b>combat</b> it because it destroys our values. 
-            <br><br>
-            To sum up, governments and citizens should work together to promote <b>integrity</b> and <b>honesty</b>.
-        </div>
-
-        <div class="smart-note">
-            <b>ملاحظة علامات الترقيم:</b> انظر للقالب أعلاه.. هل رأيت كيف بدأنا بـ Nowadays ثم (فاصلة)؟ وكيف انتهينا بـ (نقطة)؟ المصحح يخصم النقاط إذا نسيت هذه "الرتوشات" الصغيرة.
-        </div>
-
-        <h2>رابعاً: كيف تراجع وضعيتك؟ (Checklist)</h2>
-        <div class="method-step">
-            <ul>
-                <li>هل تركت فراغاً (Indentation) في بداية الفقرة؟</li>
-                <li>هل استعملت روابط (First, Moreover, To sum up)؟</li>
-                <li>هل كتبت الكلمات المفتاحية بشكل صحيح (Spelling)؟</li>
-                <li>هل وضعت حرفاً كبيراً (Capital Letter) بعد كل نقطة؟</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        جميع الحقوق محفوظة لمنصة نوفل التعليمية © 2026- طريقك للنجاح يبدأ من هنا
-    </div>
+    <button class="btn-download" onclick="generatePDF()">تحميل الدليل المنهجي المنسق (PDF)</button>
 </div>
+
+<script>
+    function generatePDF() {
+        const element = document.getElementById('content');
+        const opt = {
+            margin:       [10, 5, 10, 5],
+            filename:     'Methodology_English_BAC_2026.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
 
 </body>
 </html>
